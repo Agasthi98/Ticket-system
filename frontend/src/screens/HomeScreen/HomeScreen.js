@@ -18,6 +18,10 @@ const HomeScreen = () => {
       <a href='/busIns'>
         <button>bus</button>{' '}
       </a>
+
+      <a href='/trpHistory'>
+        <button>Trip</button>{' '}
+      </a>
     </div>
   )
 }

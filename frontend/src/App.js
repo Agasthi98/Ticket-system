@@ -12,6 +12,7 @@ import BusScreen from './screens/BusScreen/BusScreen'
 import RecharbalanceScreen from './screens/RechargeBalance/recharbalanceScreen'
 import RechargehistoryScreen from './screens/RechargehistoryScreen/rechargehistoryScreen'
 import TripAmount from './screens/TripAmount/TripAmount'
+import TripHistoryScreen from './screens/TripHistoryScreen/tripHistoryScreen'
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
       <Route path='/balance' component={RecharbalanceScreen} />
       <Route path='/rechargehistory' component={RechargehistoryScreen} />
       <Route path='/tripAmount/:busId/:busStation' component={TripAmount} />
+      <Route path='/trpHistory' component={TripHistoryScreen} />
     </Router>
   )
 }
