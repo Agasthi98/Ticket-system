@@ -1,8 +1,9 @@
-import express from "express";
+import express from 'express'
 const router = express.Router()
-import { insertBus } from '../controllers/busController.js'
+import { getUserTrips, insertBus } from '../controllers/busController.js'
 import { protect } from '../middleware/authMiddleware.js'
 
-router.route('/insertBus').post(protect,insertBus)
+router.route('/insertBus').post(protect, insertBus)
+router.post('/userTrips', getUserTrips)
 
 export default router
