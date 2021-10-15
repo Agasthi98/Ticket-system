@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Card, Button } from 'react-bootstrap'
 
-import { CircularProgressbar } from 'react-circular-progressbar'
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
 const user = JSON.parse(localStorage.getItem('userInfo'))
@@ -45,10 +46,72 @@ const RecharbalanceScreen = () => {
           <h1>error..</h1>
         ) : (
           <>
-            <h1>{tot}</h1>
-            <div style={{ width: 200, height: 200 }}>
-              <CircularProgressbar value={bul} text={`${bul}%`} />
+            <div style={{ paddingTop: '20px', paddingLeft: '30px' }}>
+              <Card
+                style={{
+                  width: '500px',
+                  paddingBottom: '10px',
+                }}
+              >
+                <Card.Body style={{ fontSize: '20px' }}>Hi,</Card.Body>
+                <Card.Body style={{ fontSize: '20px' }}>
+                  {JSON.parse(localStorage.getItem('userInfo')).fname}
+                </Card.Body>
+              </Card>
             </div>
+
+            <div style={{ paddingTop: '50px' }}></div>
+            <center>
+              <div style={{ width: 300, height: 300 }}>
+                <CircularProgressbar
+                  value={bul}
+                  text={`${bul}%`}
+                  styles={buildStyles({
+                    pathColor: 'gold',
+                  })}
+                />
+              </div>
+            </center>
+            <center>
+              <div
+                style={{
+                  paddingTop: '10px',
+                  width: '500px',
+                  paddingBottom: '10px',
+                }}
+              >
+                <Card>
+                  <Card.Body style={{ fontSize: '20px' }}>
+                    Account Balance
+                  </Card.Body>
+                  <Card.Body style={{ fontSize: '50px', fontWeight: 'bold' }}>
+                    LKR {tot}.00
+                  </Card.Body>
+                  <Card.Body>
+                    <Button variant='warning'>Recharge</Button>
+                  </Card.Body>
+                </Card>
+              </div>
+            </center>
+
+            <a href='/rechargeacc'>
+              <button>Recharge</button>{' '}
+            </a>
+
+            <a href='/balance'>
+              <button>Balance</button>{' '}
+            </a>
+
+            <a href='/rechargehistory'>
+              <button>Recharge History</button>{' '}
+            </a>
+            <a href='/busIns'>
+              <button>bus</button>{' '}
+            </a>
+
+            <a href='/trpHistory'>
+              <button>Trip</button>{' '}
+            </a>
           </>
         )}
       </div>
