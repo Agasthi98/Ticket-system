@@ -16,10 +16,10 @@ const HomeScreen = () => {
     <div data-aos="flip-left"
     data-aos-easing="ease-out-cubic"
     data-aos-duration="2000" style={{padding:'250px'}} >
-      <h1 style={{ color: 'white'}}>welcome to bus app</h1>
+      <h1 style={{ color: 'white'}}>welcome to <span className='text-warning'>UK_Transports</span> </h1>
       
-      <Link to="/">
-        <button className='btn btn-outline-warning mt-4' >Get Started</button>
+      <Link to="/login">
+        <button className='btn btn-outline-warning mt-4'>Get Started</button>
       </Link>
     </div>
     </center>
