@@ -7,6 +7,7 @@ import 'react-circular-progressbar/dist/styles.css'
 import FormContainer from '../../components/FormContainer'
 import FormContainer2 from '../../components/FormContainer2'
 import { LinkContainer } from 'react-router-bootstrap'
+import Loader from '../../components/Loader'
 
 const user = JSON.parse(localStorage.getItem('userInfo'))
 
@@ -45,6 +46,7 @@ const RecharbalanceScreen = () => {
       <div>
         {loading ? (
           <h1>Loading</h1>
+         && <Loader />
         ) : error ? (
           <h1>error..</h1>
         ) : (
