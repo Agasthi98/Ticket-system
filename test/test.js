@@ -191,6 +191,62 @@ describe('POST /api/routes', () => {
         response.body.should.be.a('object')
         response.body.should.have.property('userid')
         response.body.should.have.property('busId')
+        response.body.should.have.property('routes')
+        done()
+      })
+  })
+})
+
+//------------------------------TRIP HISTORY TEST CASES---------------------------------
+
+//recharge test
+describe('Task APIs', () => {
+  beforeEach((done) => {
+    //Before each test we empty the database
+    User.remove({}, (err) => {
+      done()
+    })
+  })
+  describe('POST /api/bus/userTrips', () => {
+    it('It should history', (done) => {
+      const user = {
+        userid: '615a01c7f74bbfb87b56772f',
+        busId: '615a01c7fasd34fwrw2sd2343',
+        busStation: 'kaduwela',
+        price: '1000',
+      }
+      chai
+        .request(server)
+        .post('/trpHistory')
+        .send(user)
+        .end((err, response) => {
+          response.should.have.status(200)
+          response.body.should.be.a('object')
+          response.body.should.have
+            .property('userid')
+            .eq('615a01c7f74bbfb87b56772f')
+          response.body.should.have
+            .property('busId')
+            .eq('615a01c7fasd34fwrw2sd2343')
+          response.body.should.have.property('busStation').eq('kaduwela')
+          done()
+        })
+    })
+  })
+})
+
+//GET recharge history
+describe('POST /api/bus/userTrips', () => {
+  it('It should display trip history', (done) => {
+    const taskId = 1
+    chai
+      .request(server)
+      .get('/trpHistory' + taskId)
+      .end((err, response) => {
+        response.should.have.status(200)
+        response.body.should.be.a('object')
+        response.body.should.have.property('userid')
+        response.body.should.have.property('busId')
         response.body.should.have.property('busStation')
         response.body.should.have.property('price')
         done()
