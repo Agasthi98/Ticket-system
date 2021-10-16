@@ -55,6 +55,8 @@ const RecharbalanceScreen = () => {
                   style={{
                     width: '500px',
                     paddingBottom: '10px',
+                    backgroundColor: '#22303c',
+                    color: 'white',
                   }}
                 >
                   <Card.Body style={{ fontSize: '20px' }}>
@@ -71,9 +73,9 @@ const RecharbalanceScreen = () => {
                       value={bul}
                       text={`${bul}%`}
                       styles={buildStyles({
-                        pathColor: '#ffad33',
+                        pathColor: '#0af528',
                         textColor: '#ffff',
-                        trailColor: '#fff',
+                        trailColor: '#ffff',
                       })}
                     />
                   </div>
@@ -86,7 +88,12 @@ const RecharbalanceScreen = () => {
                       paddingBottom: '20px',
                     }}
                   >
-                    <Card>
+                    <Card
+                      style={{
+                        backgroundColor: '#22303c',
+                        color: 'white',
+                      }}
+                    >
                       <Card.Body style={{ fontSize: '20px' }}>
                         Account Balance
                       </Card.Body>
@@ -96,7 +103,9 @@ const RecharbalanceScreen = () => {
                         LKR {tot}.00
                       </Card.Body>
                       <Card.Body>
-                        <Button variant='warning'>Recharge</Button>
+                        <LinkContainer to='/rechargeacc'>
+                          <Button variant='success'>Recharge</Button>
+                        </LinkContainer>
                       </Card.Body>
                     </Card>
                   </div>
@@ -105,13 +114,13 @@ const RecharbalanceScreen = () => {
               <div style={{ paddingTop: '40px' }}>
                 <center>
                   <LinkContainer to='/trpHistory'>
-                    <Button variant='warning'>TRIP HISTORY</Button>
+                    <Button variant='success'>TRIP HISTORY</Button>
                   </LinkContainer>{' '}
                   <LinkContainer to='/rechargehistory'>
-                    <Button variant='warning'>RECHARGE HISTORY</Button>
+                    <Button variant='success'>RECHARGE HISTORY</Button>
                   </LinkContainer>{' '}
                   <LinkContainer to='/busIns'>
-                    <Button variant='warning'>BUS IN</Button>
+                    <Button variant='success'>BUS IN</Button>
                   </LinkContainer>
                 </center>
               </div>

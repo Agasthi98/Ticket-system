@@ -3,7 +3,10 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const FormContainer = ({ children }) => {
   return (
-    <Container className='mt-4' style={{ backgroundColor: '#afafb6' }}>
+    <Container
+      className='mt-4'
+      style={{ backgroundColor: '#121b24', color: 'white' }}
+    >
       <Row className='justify-content-md-center'>
         <Col xs={12} md={6}>
           {children}
