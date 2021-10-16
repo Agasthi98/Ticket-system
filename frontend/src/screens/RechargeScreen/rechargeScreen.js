@@ -32,7 +32,7 @@ const RechargeScreen = ({ history, match }) => {
       <center>
         <h1 style={{ color: 'white' }}>Please confirm the information below</h1>
       </center>
-      <div style={{ paddingRight: '400px' }}>
+      <div style={{ paddingRight: '300px' }}>
         <FormContainer>
           <Card
             style={{
@@ -67,6 +67,19 @@ const RechargeScreen = ({ history, match }) => {
             <br />
 
             <center>
+              <style type='text/css'>
+                {`
+                        .btn-flat {
+                              background-color:#21c434;
+                              color: white;
+                         }
+
+                        .btn-xxl {
+                        padding: 1rem 1.5rem;
+                        font-size: 1.5rem;
+                  }
+                   `}
+              </style>
               <StripeCheckout
                 Checkout
                 amount={match.params.rechargeAmount * 100}
@@ -75,11 +88,7 @@ const RechargeScreen = ({ history, match }) => {
                 stripeKey='pk_test_51JPWGjSI37Hyu4LS14ggmcl7QaBe64PshUwoHcOqfMgFrpRqT2jmYQ2VpskMdLGcKUkROnXRy8YZ87FfkEJMSVcw00Os62ys8R'
                 currency='LKR'
               >
-                <Button
-                  style={{ width: '200px' }}
-                  type='submit'
-                  variant='warning'
-                >
+                <Button style={{ width: '200px' }} type='submit' variant='flat'>
                   PAy
                 </Button>
               </StripeCheckout>

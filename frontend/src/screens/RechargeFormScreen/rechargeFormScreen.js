@@ -82,10 +82,23 @@ const RechargeFormScreen = () => {
             <br />
 
             <center>
+              <style type='text/css'>
+                {`
+                        .btn-flat {
+                              background-color:#21c434;
+                              color: white;
+                         }
+
+                        .btn-xxl {
+                        padding: 1rem 1.5rem;
+                        font-size: 1.5rem;
+                  }
+                   `}
+              </style>
               <LinkContainer
                 to={`/recharge/${rechargeAmount}/${paymentMethod}`}
               >
-                <Button className='btn btn-outline-success'>NEXT</Button>
+                <Button variant='flat'>NEXT</Button>
               </LinkContainer>
             </center>
             <br></br>
