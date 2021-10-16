@@ -56,7 +56,7 @@ const RechargehistoryScreen = () => {
                         <>
                               <br></br>
                               <center><h1 style={{color:'white'}}>Recharge History</h1></center>
-                              <Link to='/' className='btn btn-dark my-3'>
+                              <Link to='/' className='btn btn-dark my-3' style={{marginLeft:'20px'}}>
                                     Go Back
                               </Link>
                               <br></br>
