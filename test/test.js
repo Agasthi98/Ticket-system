@@ -122,7 +122,7 @@ describe('Task APIs', () => {
   })
 })
 
-//GET recharge sd history
+//GET recharge history
 describe('POST /api/recharge/userRecharges', () => {
   it('It should display history', (done) => {
     const taskId = 1
@@ -136,6 +136,63 @@ describe('POST /api/recharge/userRecharges', () => {
         response.body.should.have.property('rechargeAmount')
         response.body.should.have.property('paymentMethod')
         response.body.should.have.property('CreatedAt')
+        done()
+      })
+  })
+})
+
+//------------------------------BUS ROUTES TEST CASES---------------------------------
+
+//recharge test
+describe('Task APIs', () => {
+  beforeEach((done) => {
+    //Before each test we empty the database
+    User.remove({}, (err) => {
+      done()
+    })
+  })
+  describe('POST api/bus/insertBus', () => {
+    it('It should post routes', (done) => {
+      const user = {
+        userid: '615a01c7f74bbfb87b56772f',
+        busId: '615a01c7fasd34fwrw2sd2343',
+        busStation: 'kaduwela',
+        price: '1000',
+      }
+      chai
+        .request(server)
+        .post('/tripAmount/:busId/:busStation')
+        .send(user)
+        .end((err, response) => {
+          response.should.have.status(200)
+          response.body.should.be.a('object')
+          response.body.should.have
+            .property('userid')
+            .eq('615a01c7f74bbfb87b56772f')
+          response.body.should.have
+            .property('busId')
+            .eq('615a01c7fasd34fwrw2sd2343')
+          response.body.should.have.property('busStation').eq('kaduwela')
+          done()
+        })
+    })
+  })
+})
+
+//GET recharge history
+describe('POST /api/routes', () => {
+  it('It should display routes', (done) => {
+    const taskId = 1
+    chai
+      .request(server)
+      .get('/routes' + taskId)
+      .end((err, response) => {
+        response.should.have.status(200)
+        response.body.should.be.a('object')
+        response.body.should.have.property('userid')
+        response.body.should.have.property('busId')
+        response.body.should.have.property('busStation')
+        response.body.should.have.property('price')
         done()
       })
   })
