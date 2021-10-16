@@ -79,7 +79,7 @@ const UserProfile = ({ history }) => {
             <h1 style={{ textAlign: 'center', marginTop: '20px', marginBottom: '40px' }}>User Profile</h1>
 
             <FormContainer>
-                <Link to='/balance' className='btn btn-dark my-3'>
+                <Link to='/' className='btn btn-dark my-3'>
                     Go Back
                 </Link>
                 {message && <Message variant='danger'>{message}</Message>}
@@ -173,8 +173,8 @@ const UserProfile = ({ history }) => {
                     <>
                         <style type="text/css">
                             {`
-                                .btn-danger {
-                                background-color: darkblue;
+                                .btn-flat {
+                                background-color: #21c434;
                                 color: white;
                                 }
                                 `}
@@ -182,7 +182,7 @@ const UserProfile = ({ history }) => {
 
                     </>
 
-                    <Button type='submit' variant='danger' className='mt-3'>
+                    <Button type='submit' variant='flat' className='mt-3'>
                         Update
                     </Button>
 

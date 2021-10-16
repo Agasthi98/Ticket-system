@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
 import visa from '../RechargeFormScreen/VisaLogo.png'
 import master from '../RechargeFormScreen/master.png'
+import { Link } from 'react-router-dom'
 
 const RechargeFormScreen = () => {
   const [rechargeAmount, setRechargeAmount] = useState()
@@ -17,6 +18,9 @@ const RechargeFormScreen = () => {
   return (
     <div style={{ paddingRight: '400px' }}>
       <FormContainer>
+      <Link to='/' className='btn btn-dark my-3'>
+            Go Back
+          </Link>
         <Card
           style={{
             backgroundColor: '#22303c',
@@ -25,6 +29,7 @@ const RechargeFormScreen = () => {
           }}
         >
           <h1 style={{ color: 'white' }}>RECHARGE YOUR ACCOUNT</h1>
+         
           <br />
           <Form onSubmit={submitHandler}>
             <Form.Group controlId='rechargeAmount'>

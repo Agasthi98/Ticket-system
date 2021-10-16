@@ -60,7 +60,7 @@ const SignupScreen = ({ history }) => {
     return (
 
         <FormContainer>
-            <h1 style={{ marginBottom: '30px' }}>Sign Up</h1>
+            <h1 style={{ marginBottom: '30px',color:'white' }}>Sign Up</h1>
             {message && <Message variant='danger'>{message}</Message>}
             {/* {error && <Message variant='danger'>{error}</Message>}
         {loading && <Loader />}
@@ -151,7 +151,7 @@ const SignupScreen = ({ history }) => {
             <Row className='py-3'>
                 <Col>
                     Have an Account?{' '}
-                    <Link to='/login'>
+                    <Link to='/login'style={{color:'white'}} >
                         Login
                     </Link>
                 </Col>

@@ -32,9 +32,9 @@ const LoginScreen = ({ location, history }) => {
 
     return (
         <FormContainer>
-            <h1 style={{ marginBottom: '30px' }}>Sign In</h1>
+            <h1 style={{ marginBottom: '30px', color:'white' }}>Sign In</h1>
 
-            <Form onSubmit={submitHandler}>
+            <Form onSubmit={submitHandler} >
                 <Form.Group controlId='email'>
                     <Form.Label>Email Address</Form.Label>
                     <Form.Control style={{ height: '40px' }}
@@ -63,7 +63,7 @@ const LoginScreen = ({ location, history }) => {
             <Row className='py-3'>
                 <Col>
                     New Customer?{' '}
-                    <Link to='/signup'>
+                    <Link to='/signup' style={{color:'white'}}>
                         Register
                     </Link>
                 </Col>

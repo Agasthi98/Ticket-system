@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Button, Col, Row, Tab, Nav, Container, Dropdown, SplitButton, DropdownButton } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
+
 const MoraScreen = ({ location, history }) => {
 
 
@@ -39,8 +40,8 @@ const MoraScreen = ({ location, history }) => {
 
                     <Form.Group controlId='busStation'>
                         <Form.Label className='mt-3'>Select Get In Location</Form.Label>
-                        <Form value={busStation} onChange={(e) => setStation(e.target.value)}>
-                            <select style={{width:'100%'}}>
+                        <Form value={busStation} onChange={(e) => setStation(e.target.value)} >
+                            <select style={{width:'100%'}} required>
                                 <option value=''>Select Location</option>
                                 <option value='Rawthawatta'>Rawthawatta</option>
                                 <option value='Moratumulla'>Moratumulla</option>

@@ -12,12 +12,12 @@ const BusScreen = () => {
     return (
 
         <>
+            <Link to='/' className='btn btn-dark my-3' style={{marginLeft:'20px'}}>
+                Go Back
+            </Link>
+            <Container>
+                <h2 style={{ color: 'white', textAlign: 'center', marginBottom:'30px' }}>Select Your Bus Route</h2>
 
-            <Container className='mt-4' >
-                <h2 style={{color:'white', textAlign:'center'}}>Select Your Bus Route</h2>
-                <Link to='/balance' className='btn btn-dark my-3'>
-                    Go Back
-                </Link>
                 <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                     <Row>
                         <Col sm={3} >

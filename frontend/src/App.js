@@ -3,7 +3,6 @@ import { Container } from 'react-bootstrap'
 import './App.css'
 import Header from './components/Header/Header'
 import LoginScreen from './screens/Login/LoginScreen'
-import HomeScreen from './screens/HomeScreen/HomeScreen'
 import SignupScreen from './screens/SignupScreen/SignupScreen'
 import UserProfile from './screens/UserProfile/UserProfile'
 import RechargeScreen from './screens/RechargeScreen/rechargeScreen'
@@ -19,8 +18,6 @@ const App = () => {
   return (
     <Router>
       <Header />
-    
-      <Route path='/' component={HomeScreen} exact />
       <Route path='/login' component={LoginScreen} />
       <Route path='/signup' component={SignupScreen} />
       <Route path='/profile' component={UserProfile} />
@@ -30,7 +27,7 @@ const App = () => {
       />
       <Route path='/rechargeacc' component={RechargeFormScreen} />
       <Route path='/busIns' component={BusScreen} />
-      <Route path='/balance' component={RecharbalanceScreen} />
+      <Route path='/' component={RecharbalanceScreen} exact />
       <Route path='/rechargehistory' component={RechargehistoryScreen} />
       <Route path='/tripAmount/:busId/:busStation' component={TripAmount} />
       <Route path='/trpHistory' component={TripHistoryScreen} />

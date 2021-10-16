@@ -37,7 +37,7 @@ const TripHistoryScreen = () => {
           <center>
             <h1 style={{color:'white'}}>Trip History</h1>
           </center>
-          <Link to='/balance' className='btn btn-dark my-3'>
+          <Link to='/' className='btn btn-dark my-3'>
             Go Back
           </Link>
           <br></br>
