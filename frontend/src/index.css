@@ -17,3 +17,11 @@ code {
   margin-left: auto !important;
 }
 
+.nav.nav-pills .nav-link.active {
+  background-color: white; 
+  color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
