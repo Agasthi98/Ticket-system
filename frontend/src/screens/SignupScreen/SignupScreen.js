@@ -6,6 +6,7 @@ import Message from '../../components/Message'
 import FormContainer from '../../components/FormContainer'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { register } from '../../actions/userActions'
+import Loader from '../../components/Loader'
 
 const SignupScreen = ({ history }) => {
 
@@ -18,7 +19,7 @@ const SignupScreen = ({ history }) => {
     const [image, setImage] = useState('')
     const [uploading, setUploading] = useState(false)
     const [message, setMessage] = useState(null)
-
+    
     const dispatch = useDispatch()
 
     const userRegister = useSelector((state) => state.userRegister)
@@ -58,9 +59,11 @@ const SignupScreen = ({ history }) => {
     }
 
     return (
+      
 
         <FormContainer>
             <h1 style={{ marginBottom: '30px',color:'white' }}>Sign Up</h1>
+            {loading && (<Loader />)}
             {message && <Message variant='danger'>{message}</Message>}
             {/* {error && <Message variant='danger'>{error}</Message>}
         {loading && <Loader />}
