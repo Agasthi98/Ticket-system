@@ -8,10 +8,15 @@ import FormContainer from '../../components/FormContainer'
 import FormContainer2 from '../../components/FormContainer2'
 import { LinkContainer } from 'react-router-bootstrap'
 import Loader from '../../components/Loader'
+import AOS from 'aos'
+import 'aos/dist/aos.css';
 
 const user = JSON.parse(localStorage.getItem('userInfo'))
 
 const RecharbalanceScreen = () => {
+
+  AOS.init()
+
   const [myrecharges, setmybookings] = useState([])
   const [loading, setloading] = useState(false)
   const [error, seterror] = useState(false)
@@ -46,13 +51,14 @@ const RecharbalanceScreen = () => {
       <div>
         {loading ? (
           <h1>Loading</h1>
-         && <Loader />
+          && <Loader />
         ) : error ? (
           <h1>error..</h1>
         ) : (
           <>
-            <FormContainer2>
-              <div style={{ paddingTop: '20px', paddingLeft: '10px' }}>
+        
+            <FormContainer2 >
+              <div style={{ paddingTop: '20px', paddingLeft: '10px' }} >
                 <Card
                   style={{
                     width: '500px',
@@ -145,6 +151,7 @@ const RecharbalanceScreen = () => {
               <br></br>
               <br></br>
             </FormContainer2>
+            
           </>
         )}
       </div>
