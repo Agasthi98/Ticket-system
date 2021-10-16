@@ -20,7 +20,7 @@ const RechargeScreen = ({ history, match }) => {
         rechargeDetails
       )
       console.log(result)
-      history.push('/rechargeacc')
+      history.push('/')
     } catch (error) {
       console.log(error)
     }
