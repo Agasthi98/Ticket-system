@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import FormContainer from '../../components/FormContainer'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { login } from '../../actions/userActions'
-
-
+import Loader from '../../components/Loader'
 
 
 const LoginScreen = ({ location, history }) => {
@@ -32,6 +31,7 @@ const LoginScreen = ({ location, history }) => {
 
     return (
         <FormContainer>
+            {loading && (<Loader />)}
             <h1 style={{ marginBottom: '30px', color:'white' }}>Sign In</h1>
 
             <Form onSubmit={submitHandler} >
