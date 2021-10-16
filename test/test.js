@@ -122,7 +122,7 @@ describe('Task APIs', () => {
   })
 })
 
-//GET recharge history
+//GET recharge sd history
 describe('POST /api/recharge/userRecharges', () => {
   it('It should display history', (done) => {
     const taskId = 1
