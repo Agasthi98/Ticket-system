@@ -35,43 +35,46 @@ const TripHistoryScreen = () => {
         <>
           <br></br>
           <center>
-            <h1 style={{color:'white'}}>Trip History</h1>
+            <h1 style={{ color: 'white' }}>Trip History</h1>
           </center>
           <Link to='/balance' className='btn btn-dark my-3'>
             Go Back
           </Link>
           <br></br>
-
-          <Table
-            striped
-            bordered
-            hover
-            variant='dark'
-            responsive
-            className='table-sm'
-            style={{ paddingLeft: '10px' }}
-          >
-            <thead>
-              <tr>
-                <th>EMAIL</th>
-                <th>BUS ID</th>
-                <th>BUS STATION</th>
-                <th>TIME</th>
-                <th>PRICE</th>
-              </tr>
-            </thead>
-            <tbody>
-              {myTrips.map((trip) => (
-                <tr key={trip._id}>
-                  <td>{JSON.parse(localStorage.getItem('userInfo')).email}</td>
-                  <td>{trip.busId}</td>
-                  <td>{trip.busStation}</td>
-                  <td>{trip.createdAt}</td>
-                  <td>{trip.price}</td>
+          <div style={{ padding: '70px' }}>
+            <Table
+              striped
+              bordered
+              hover
+              variant='dark'
+              responsive
+              className='table-sm'
+              style={{ paddingLeft: '10px' }}
+            >
+              <thead>
+                <tr>
+                  <th>EMAIL</th>
+                  <th>BUS ID</th>
+                  <th>BUS STATION</th>
+                  <th>TIME</th>
+                  <th>PRICE</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
+              </thead>
+              <tbody>
+                {myTrips.map((trip) => (
+                  <tr key={trip._id}>
+                    <td>
+                      {JSON.parse(localStorage.getItem('userInfo')).email}
+                    </td>
+                    <td>{trip.busId}</td>
+                    <td>{trip.busStation}</td>
+                    <td>{trip.createdAt}</td>
+                    <td>{trip.price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
         </>
       )}
     </div>
