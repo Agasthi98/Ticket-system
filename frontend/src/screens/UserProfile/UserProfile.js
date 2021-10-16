@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../../components/Message'
 import FormContainer from '../../components/FormContainer'
@@ -75,100 +76,119 @@ const UserProfile = ({ history }) => {
 
     return (
         <div>
-            <h1 style={{ textAlign: 'center', marginTop: '20px',marginBottom:'40px' }}>User Profile</h1>
+            <h1 style={{ textAlign: 'center', marginTop: '20px', marginBottom: '40px' }}>User Profile</h1>
+
             <FormContainer>
+                <Link to='/balance' className='btn btn-dark my-3'>
+                    Go Back
+                </Link>
                 {message && <Message variant='danger'>{message}</Message>}
                 {success && <Message variant='success'>Profile Updated</Message>}
-           
 
-                    <Image src={user.image} width='30%' height='15%'  className='rounded mx-auto d-block' />
+                <br />
+                <br />
+                <Image src={user.image} width='30%' height='15%' className='rounded mx-auto d-block' />
 
-                    <p style={{ textAlign:'center', marginTop:'30px' }}><b>UserId:{user._id}</b></p>
-              
+                <p style={{ textAlign: 'center', marginTop: '30px' }}><b>UserId:{user._id}</b></p>
 
-                    <Form onSubmit={submitHandler} style={{ marginTop: '50px' }} >
-                        <Form.Group controlId='fname'>
-                            <Form.Label>First Name</Form.Label>
-                            <Form.Control
-                                type='fname'
-                                placeholder='Enter first name'
-                                value={fname}
-                                onChange={(e) => setFname(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
 
-                        <Form.Group controlId='lname' className='mt-2'>
-                            <Form.Label>Last Name</Form.Label>
-                            <Form.Control
-                                type='lname'
-                                placeholder='Enter last name'
-                                value={lname}
-                                onChange={(e) => setLname(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                <Form onSubmit={submitHandler} style={{ marginTop: '50px' }} >
+                    <Form.Group controlId='fname'>
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control style={{ borderRadius: '10px' }}
+                            type='fname'
+                            placeholder='Enter first name'
+                            value={fname}
+                            onChange={(e) => setFname(e.target.value)}
+                        ></Form.Control>
+                    </Form.Group>
 
-                        <Form.Group controlId='email' className='mt-2'>
-                            <Form.Label>Email </Form.Label>
-                            <Form.Control
-                                type='email'
-                                placeholder='Enter email'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                    <Form.Group controlId='lname' className='mt-2' >
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control style={{ borderRadius: '10px' }}
+                            type='lname'
+                            placeholder='Enter last name'
+                            value={lname}
+                            onChange={(e) => setLname(e.target.value)}
+                        ></Form.Control>
+                    </Form.Group>
 
-                        <Form.Group controlId='phoneNo' className='mt-2'>
-                            <Form.Label>Phone No </Form.Label>
-                            <Form.Control
-                                type='phoneNo'
-                                placeholder='Enter Phone No'
-                                value={phoneNo}
-                                onChange={(e) => setPhoneNo(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                    <Form.Group controlId='email' className='mt-2'>
+                        <Form.Label>Email </Form.Label>
+                        <Form.Control style={{ borderRadius: '10px' }}
+                            type='email'
+                            placeholder='Enter email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        ></Form.Control>
+                    </Form.Group>
 
-                        <Form.Group controlId='password' className='mt-2'>
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
-                                type='password'
-                                placeholder='Enter password'
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                    <Form.Group controlId='phoneNo' className='mt-2'>
+                        <Form.Label>Phone No </Form.Label>
+                        <Form.Control style={{ borderRadius: '10px' }}
+                            type='phoneNo'
+                            placeholder='Enter Phone No'
+                            value={phoneNo}
+                            onChange={(e) => setPhoneNo(e.target.value)}
+                        ></Form.Control>
+                    </Form.Group>
 
-                        <Form.Group controlId='confirmPassword' className='mt-2'>
-                            <Form.Label>Confirm Password</Form.Label>
-                            <Form.Control
-                                type='password'
-                                placeholder='Confirm password'
-                                value={confirmPassword}
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                            ></Form.Control>
-                        </Form.Group>
+                    <Form.Group controlId='password' className='mt-2'>
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control style={{ borderRadius: '10px' }}
+                            type='password'
+                            placeholder='Enter password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        ></Form.Control>
+                    </Form.Group>
 
-                        <Form.Group controlId='image'>
-                            <Form.Label>Image</Form.Label>
-                            <Form.Control
-                                type='text'
-                                placeholder='Enter Image'
-                                value={image}
-                                onChange={(e) => setImage(e.target.value)}
-                            ></Form.Control>
-                            <Form.File
-                                id='image-file'
-                                label='Choose File'
-                                custom
-                                onChange={uploadFileHandler}
-                            ></Form.File>
-                            {uploading}
-                        </Form.Group>
+                    <Form.Group controlId='confirmPassword' className='mt-2'>
+                        <Form.Label>Confirm Password</Form.Label>
+                        <Form.Control style={{ borderRadius: '10px' }}
+                            type='password'
+                            placeholder='Confirm password'
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                        ></Form.Control>
+                    </Form.Group>
 
-                        <Button type='submit' variant='dark' className='mt-3'>
-                            Update
-                        </Button>
-                    </Form>
-           
+                    <Form.Group controlId='image'>
+                        <Form.Label>Image</Form.Label>
+                        <Form.Control style={{ borderRadius: '10px' }}
+                            type='text'
+                            placeholder='Enter Image'
+                            value={image}
+                            onChange={(e) => setImage(e.target.value)}
+                        ></Form.Control>
+                        <Form.File
+                            id='image-file'
+                            label='Choose File'
+                            custom
+                            onChange={uploadFileHandler}
+                        ></Form.File>
+                        {uploading}
+                    </Form.Group>
+
+                    <>
+                        <style type="text/css">
+                            {`
+                                .btn-danger {
+                                background-color: darkblue;
+                                color: white;
+                                }
+                                `}
+                        </style>
+
+                    </>
+
+                    <Button type='submit' variant='danger' className='mt-3'>
+                        Update
+                    </Button>
+
+
+                </Form>
+
             </FormContainer>
         </div>
     )

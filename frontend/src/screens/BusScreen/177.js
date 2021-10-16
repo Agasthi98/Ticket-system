@@ -28,7 +28,7 @@ const KaduScreen = ({ location, history }) => {
 
            
             <Container>
-                <h1 style={{ marginBottom: '30px' }}>177 - Kaduwela - Kolupitiya</h1>
+                <h1 style={{ marginBottom: '30px', color:'white' }}>177 - Kaduwela - Kolupitiya</h1>
 
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='busId'>

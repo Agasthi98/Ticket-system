@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Table, Button } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 const user = JSON.parse(localStorage.getItem('userInfo'))
 
@@ -38,9 +39,13 @@ const RechargehistoryScreen = () => {
 
                         <>
                               <br></br>
-                              <center><h1>Recharge History</h1></center>
+                              <center><h1 style={{color:'white'}}>Recharge History</h1></center>
+                              <Link to='/balance' className='btn btn-dark my-3'>
+                                    Go Back
+                              </Link>
                               <br></br>
-                              <Table striped bordered hover responsive className='table-sm' style={{ paddingLeft: '10px' }}>
+                             
+                              <Table striped bordered hover variant="dark" responsive className='table-sm' style={{ paddingLeft: '10px' }}>
                                     <thead >
                                           <tr >
 

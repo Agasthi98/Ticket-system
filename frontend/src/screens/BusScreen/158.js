@@ -23,7 +23,7 @@ const MoraScreen = ({ location, history }) => {
         <>
            
             <Container>
-                <h1 style={{ marginBottom: '30px' }}>158 - Moratuwa - Piliyandala</h1>
+                <h1 style={{ marginBottom: '30px', color:'white' }}>158 - Moratuwa - Piliyandala</h1>
 
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='busId'>
