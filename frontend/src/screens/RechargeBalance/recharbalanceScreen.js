@@ -104,23 +104,36 @@ const RecharbalanceScreen = () => {
                       </Card.Body>
                       <Card.Body>
                         <LinkContainer to='/rechargeacc'>
-                          <Button variant='success'>Recharge</Button>
+                          <Button variant='flat'>Recharge</Button>
                         </LinkContainer>
                       </Card.Body>
                     </Card>
                   </div>
                 </center>
               </div>
+              <style type='text/css'>
+                {`
+                        .btn-flat {
+                              background-color:#21c434;
+                              color: white;
+                         }
+
+                        .btn-xxl {
+                        padding: 1rem 1.5rem;
+                        font-size: 1.5rem;
+                  }
+                   `}
+              </style>
               <div style={{ paddingTop: '40px' }}>
                 <center>
                   <LinkContainer to='/trpHistory'>
-                    <Button variant='success'>TRIP HISTORY</Button>
+                    <Button variant='flat'>TRIP HISTORY</Button>
                   </LinkContainer>{' '}
                   <LinkContainer to='/rechargehistory'>
-                    <Button variant='success'>RECHARGE HISTORY</Button>
+                    <Button variant='flat'>RECHARGE HISTORY</Button>
                   </LinkContainer>{' '}
                   <LinkContainer to='/busIns'>
-                    <Button variant='success'>BUS IN</Button>
+                    <Button variant='flat'>BUS IN</Button>
                   </LinkContainer>
                 </center>
               </div>
