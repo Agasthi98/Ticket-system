@@ -81,7 +81,7 @@ const RecharbalanceScreen = () => {
                       value={bul}
                       text={`${bul}%`}
                       styles={buildStyles({
-                        pathColor: '#0af528',
+                        pathColor: '#ff9900',
                         textColor: '#ffff',
                         trailColor: '#ffff',
                       })}
@@ -122,7 +122,7 @@ const RecharbalanceScreen = () => {
               <style type='text/css'>
                 {`
                         .btn-flat {
-                              background-color:#21c434;
+                              background-color:#ff9900;
                               color: white;
                          }
 

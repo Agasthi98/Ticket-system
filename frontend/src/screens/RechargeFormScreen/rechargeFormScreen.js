@@ -90,7 +90,7 @@ const RechargeFormScreen = () => {
               <style type='text/css'>
                 {`
                         .btn-flat {
-                              background-color:#21c434;
+                              background-color:#ff9900;
                               color: white;
                          }
 
