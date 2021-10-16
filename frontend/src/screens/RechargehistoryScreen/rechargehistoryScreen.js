@@ -1,15 +1,31 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import { Table, Button } from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const user = JSON.parse(localStorage.getItem('userInfo'))
 
 const RechargehistoryScreen = () => {
+  const [myrecharges, setmybookings] = useState([])
+  const [loading, setloading] = useState(false)
+  const [error, seterror] = useState(false)
 
-      const [myrecharges, setmybookings] = useState([]);
-      const [loading, setloading] = useState(false);
-      const [error, seterror] = useState(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    try {
+      setloading(true)
+      const data = await (
+        await axios.post('/api/recharge/userRecharges', {
+          userid: JSON.parse(localStorage.getItem('userInfo'))._id,
+        })
+      ).data
+      setmybookings(data)
+      setloading(false)
+    } catch (error) {
+      setloading(false)
+      seterror(true)
+    }
+  }, [])
 
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -71,6 +87,8 @@ const RechargehistoryScreen = () => {
                   )}
             </div>
       )
+ 
+  
 }
 
 export default RechargehistoryScreen
