@@ -13,11 +13,13 @@ import RechargehistoryScreen from './screens/RechargehistoryScreen/rechargehisto
 import TripAmount from './screens/TripAmount/TripAmount'
 import TripHistoryScreen from './screens/TripHistoryScreen/tripHistoryScreen'
 import Footer from './components/Footer/Footer'
+import HomeScreen from './screens/HomeScreen/HomeScreen'
 
 const App = () => {
   return (
     <Router>
       <Header />
+      <Route path='/home' component={HomeScreen} />
       <Route path='/login' component={LoginScreen} />
       <Route path='/signup' component={SignupScreen} />
       <Route path='/profile' component={UserProfile} />
