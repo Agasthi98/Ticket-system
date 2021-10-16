@@ -19,6 +19,7 @@ const App = () => {
   return (
     <Router>
       <Header />
+    
       <Route path='/' component={HomeScreen} exact />
       <Route path='/login' component={LoginScreen} />
       <Route path='/signup' component={SignupScreen} />
@@ -33,8 +34,10 @@ const App = () => {
       <Route path='/rechargehistory' component={RechargehistoryScreen} />
       <Route path='/tripAmount/:busId/:busStation' component={TripAmount} />
       <Route path='/trpHistory' component={TripHistoryScreen} />
+     
       <Footer />
     </Router>
+      
   )
 }
 
