@@ -143,7 +143,7 @@ describe('POST /api/recharge/userRecharges', () => {
 
 //------------------------------BUS ROUTES TEST CASES---------------------------------
 
-//recharge test
+//routes test
 describe('Task APIs', () => {
   beforeEach((done) => {
     //Before each test we empty the database
@@ -179,7 +179,7 @@ describe('Task APIs', () => {
   })
 })
 
-//GET recharge history
+//GET rouytes
 describe('POST /api/routes', () => {
   it('It should display routes', (done) => {
     const taskId = 1
@@ -199,7 +199,6 @@ describe('POST /api/routes', () => {
 
 //------------------------------TRIP HISTORY TEST CASES---------------------------------
 
-//recharge test
 describe('Task APIs', () => {
   beforeEach((done) => {
     //Before each test we empty the database
@@ -235,7 +234,7 @@ describe('Task APIs', () => {
   })
 })
 
-//GET recharge history
+//GET trip history
 describe('POST /api/bus/userTrips', () => {
   it('It should display trip history', (done) => {
     const taskId = 1
